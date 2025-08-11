@@ -40,6 +40,7 @@
         #0F1115;
     }
     .blurred:before{content:"";position:absolute;inset:0;backdrop-filter:blur(6px);border-radius:1rem;background:rgba(0,0,0,.35)}
+    .lock-badge{box-shadow:0 0 0 3px rgba(193,255,114,0.18)}
   </style>
 </head>
 <body class="min-h-screen bg-field text-white antialiased">
@@ -70,6 +71,11 @@
           <div id="countdown" class="font-display text-2xl md:text-3xl font-bold text-neon">—</div>
         </div>
         <a href="#pricing" class="inline-flex items-center justify-center gap-2 rounded-xl border border-neon/70 bg-neon text-black font-semibold px-6 py-3 hover:shadow-glow">Start My Free Trial</a>
+      </div>
+
+      <!-- Price-lock badge (user-specific 30d timer) -->
+      <div class="mt-4 inline-flex items-center gap-2 rounded-full border border-neon/60 bg-black/40 px-3 py-1 text-xs text-white/80 lock-badge">
+        <span class="text-neon font-semibold">Your price‑lock</span> ends in <span id="cdays">—</span>d <span id="chours">—</span>h <span id="cmins">—</span>m
       </div>
 
       <p class="mt-4 text-xs text-white/50">For e‑commerce, services, and creators • Meta/TikTok/Google • Local/private AI operators</p>
@@ -116,6 +122,86 @@
             <li>Members‑only chat (Discord/Skool) access</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACKS / CURRICULUM PREVIEW -->
+  <section id="curriculum" class="px-4 py-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-6">
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl tracking-tight">Pick a Track — or Do Them All</h2>
+        <p class="text-white/70 mt-2">Clear paths with step‑by‑step lessons, templates, and live breakdowns.</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="flex flex-wrap items-center justify-center gap-2">
+        <button class="tab px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-sm" data-k="ads">Ads Mastery</button>
+        <button class="tab px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-sm" data-k="agency">Agency Builder</button>
+        <button class="tab px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-sm" data-k="ecom">E‑com & Offers</button>
+        <button class="tab px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-sm" data-k="ai">AI Operators</button>
+        <button class="tab px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-sm" data-k="automation">Automation Library</button>
+      </div>
+
+      <!-- Search -->
+      <div class="mt-5 max-w-xl mx-auto">
+        <input id="search" placeholder="Search lessons, templates, topics…" class="w-full rounded-xl bg-black/30 border border-white/10 px-4 py-3 text-sm" />
+      </div>
+
+      <!-- Grid -->
+      <div id="grid" class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+      <div class="mt-6 text-center">
+        <a href="#pricing" class="inline-flex items-center justify-center gap-2 rounded-xl border border-neon/70 bg-neon text-black font-semibold px-6 py-3">Unlock Full Library</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU'LL BUILD IN 30 DAYS -->
+  <section class="px-4 py-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-6">
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl tracking-tight">What You’ll Build in 30 Days</h2>
+        <p class="text-white/70 mt-2">Ship real assets that make money and save time.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="rounded-2xl border border-white/10 bg-soft/60 p-6">
+          <h3 class="font-display font-bold text-2xl mb-2">For Brands & Creators</h3>
+          <ul class="text-sm text-white/80 space-y-2 list-disc list-inside">
+            <li>Direct‑response ad system (offers, hooks, creative testing)</li>
+            <li>Winning creative backlog + UGC briefs</li>
+            <li>ROAS dashboard and action cadence</li>
+            <li>Email/SMS flows that actually convert</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-white/10 bg-soft/60 p-6">
+          <h3 class="font-display font-bold text-2xl mb-2">For Agencies & Operators</h3>
+          <ul class="text-sm text-white/80 space-y-2 list-disc list-inside">
+            <li>Client onboarding kit (contracts, scopes, SOPs)</li>
+            <li>Sales pipeline + appointment setting scripts</li>
+            <li>Operator (Mac Studio) installed with 3 automations</li>
+            <li>Lead gen funnel + case study template</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE CALLS / SCHEDULE PREVIEW -->
+  <section class="px-4 py-10">
+    <div class="max-w-6xl mx-auto rounded-2xl border border-white/10 bg-soft/60 p-6">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <h2 class="font-display font-extrabold text-3xl tracking-tight">Live Calls, Real Builds</h2>
+          <p class="text-white/70 mt-2 text-sm max-w-xl">Two live calls per month: media buying breakdowns, Operator installs, and Q&A. Replays archived. Submit accounts or workflows for teardown.</p>
+        </div>
+        <a href="#pricing" class="inline-flex items-center justify-center gap-2 rounded-xl border border-neon/70 bg-neon text-black font-semibold px-6 py-3 self-start md:self-auto">Start Free Trial</a>
+      </div>
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+        <div class="rounded-xl border border-white/10 bg-black/20 p-4"><div class="text-white/80">Week 1</div><div class="text-neon font-bold">Ad Systems Deep Dive</div></div>
+        <div class="rounded-xl border border-white/10 bg-black/20 p-4"><div class="text-white/80">Week 2</div><div class="text-neon font-bold">Operator Install & Automations</div></div>
+        <div class="rounded-xl border border-white/10 bg-black/20 p-4"><div class="text-white/80">Week 3</div><div class="text-neon font-bold">Creative & UGC Workshop</div></div>
+        <div class="rounded-xl border border-white/10 bg-black/20 p-4"><div class="text-white/80">Week 4</div><div class="text-neon font-bold">Hot Seats & Q&A</div></div>
       </div>
     </div>
   </section>
@@ -310,6 +396,21 @@
     </div>
   </div>
 
+  <!-- LESSON PREVIEW MODAL -->
+  <div id="lessonModal" class="fixed inset-0 z-[70] hidden items-center justify-center p-4">
+    <div class="absolute inset-0 bg-black/70" id="lessonOverlay"></div>
+    <div class="relative max-w-xl w-full rounded-2xl border border-white/10 bg-soft p-6">
+      <div class="flex items-start justify-between gap-4">
+        <h3 id="lessonTitle" class="font-display font-bold text-xl">Preview</h3>
+        <button id="lessonClose" class="text-white/60 hover:text-white">✕</button>
+      </div>
+      <div id="lessonBody" class="mt-3 text-sm text-white/80 leading-relaxed"></div>
+      <div class="mt-5 text-right">
+        <a href="#pricing" class="inline-flex items-center justify-center gap-2 rounded-xl border border-neon/70 bg-neon text-black font-semibold px-5 py-2">Unlock Full Lesson</a>
+      </div>
+    </div>
+  </div>
+
   <script>
     // ---------- CONFIG (replace these when you hand me URLs / keys) ----------
     const CONFIG = {
@@ -319,7 +420,7 @@
       NEXT_PRICE_EPOCH: '2025-08-01T00:00:00Z' // reference date to compute 30‑day bumps
     };
 
-    // ---------- COUNTDOWN ----------
+    // ---------- GLOBAL 30‑DAY CADENCE COUNTDOWN ----------
     function nextPriceIncrease(now = new Date()){
       const ref = new Date(CONFIG.NEXT_PRICE_EPOCH);
       const MS_30D = 30 * 24 * 60 * 60 * 1000;
@@ -347,6 +448,27 @@
     }
     setInterval(tickCountdown, 1000); tickCountdown();
 
+    // ---------- USER-SPECIFIC PRICE-LOCK (30 days from first visit) ----------
+    (function(){
+      const key = 'join_price_lock_until';
+      let until = localStorage.getItem(key);
+      if(!until){
+        const d = new Date(); d.setDate(d.getDate()+30); until = d.toISOString(); localStorage.setItem(key, until);
+      }
+      function tick(){
+        const end = new Date(until).getTime();
+        const now = Date.now();
+        let left = Math.max(0, end - now);
+        const d = Math.floor(left/86400000); left -= d*86400000;
+        const h = Math.floor(left/3600000); left -= h*3600000;
+        const m = Math.floor(left/60000);
+        document.getElementById('cdays').textContent = d;
+        document.getElementById('chours').textContent = h;
+        document.getElementById('cmins').textContent = m;
+      }
+      tick(); setInterval(tick, 60000);
+    })();
+
     // ---------- CHECKOUT (client‑side redirect placeholders) ----------
     const email = document.getElementById('email');
     const nameEl = document.getElementById('name');
@@ -359,7 +481,7 @@
       return u.toString();
     }
 
-    checkoutBtn.addEventListener('click', ()=>{
+    checkoutBtn?.addEventListener('click', ()=>{
       const e = (email.value||'').trim();
       const n = (nameEl.value||'').trim();
       if(!e || !e.includes('@')){ email.focus(); email.classList.add('shadow-glow'); setTimeout(()=>email.classList.remove('shadow-glow'), 1200); return; }
@@ -369,7 +491,7 @@
       window.location.href = dest;
     });
 
-    paypalLink.addEventListener('click', (e)=>{
+    paypalLink?.addEventListener('click', (e)=>{
       e.preventDefault();
       const mail = (email.value||'').trim();
       const dest = withQuery(CONFIG.PAYPAL_CHECKOUT_URL, { email: mail, trial: '7d' });
@@ -409,6 +531,103 @@
       authNote.classList.remove('hidden');
       setTimeout(hideAuth, 1800);
     });
+
+    // ---------- CURRICULUM DATA & RENDER ----------
+    const CURR = {
+      ads: [
+        {t:'Direct‑Response Foundations', p:'Frameworks that print: offers, hooks, angles, messaging.', s:true},
+        {t:'Creative Testing → Scale', p:'Structured test matrix, budgets, and iteration cadence.'},
+        {t:'Media Buying OS', p:'Meta, TikTok, YouTube/Google — setups that actually work.'},
+        {t:'Account Maintenance & Recovery', p:'When to cut, when to double, and how to save a sinking account.'},
+        {t:'Ad Strategy Templates', p:'Plug‑and‑play briefs, naming, and reporting formats.'}
+      ],
+      agency: [
+        {t:'Start & Grow Your Ad Agency', p:'Positioning, offers, pricing, retainers vs. performance.'},
+        {t:'Sales Team Training', p:'Discovery, diagnosis, objection handling, and closes.'},
+        {t:'Client Templates & Contracts', p:'MSA, SOW, onboarding, scopes — downloadable.'},
+        {t:'Onboarding & Ops', p:'SOPs, pipelines, weekly cadence, and deliverables.'},
+        {t:'Case Studies That Sell', p:'How to build and deploy proof that converts.'}
+      ],
+      ecom: [
+        {t:'Finding Winning Products', p:'Signals, tooling, and fast validation.'},
+        {t:'Offer Architecture for E‑com', p:'Bundles, AOV boosters, LTV plays.'},
+        {t:'Email & SMS Flows', p:'Welcome, Abandoned, Post‑purchase — with examples.'},
+        {t:'Payment Gateways + Crypto', p:'What to use, how to set up, risk management.'},
+        {t:'Store CRO Checklist', p:'Speed, trust, PDP anatomy, and quick wins.'}
+      ],
+      ai: [
+        {t:'Start with AI (Vibecoding)', p:'Mindset, scaffolding, and getting your first wins.'},
+        {t:'Build AI Agents (Crew/Agentic)', p:'Orchestrate roles, tools, and hand‑offs that work.'},
+        {t:'RAG That Doesn’t Break', p:'Chunking, retrieval, evals, and guardrails.'},
+        {t:'MCP Servers & Tools', p:'Call external tools safely, design resilient flows.'},
+        {t:'Supervised Fine‑Tuning', p:'Datasets, runs, evals — when to do it and how.'},
+        {t:'Deploy a Private Operator', p:'Local LLMs, secure env, your business HQ.'}
+      ],
+      automation: [
+        {t:'Operator Automation Library', p:'Ready‑to‑use modules: reporting, audits, alerts.'},
+        {t:'Service Workflows', p:'Lead routing, booking, reminders, and follow‑ups.'},
+        {t:'E‑com Workflows', p:'Inventory, creative, UGC, and promo coordination.'},
+        {t:'Compliance & Logging', p:'Audit trails, access controls, and safe rollbacks.'}
+      ]
+    };
+
+    const grid = document.getElementById('grid');
+    const search = document.getElementById('search');
+    const tabs = document.querySelectorAll('.tab');
+
+    function cardHTML(item){
+      const body = `${item.p}
+
+This is a short preview outline. Join to unlock the full lesson, templates, and replay.`;
+      return `<div class="rounded-2xl border border-white/10 bg-black/20 p-4 flex flex-col">
+        <div class="flex items-center justify-between gap-3">
+          <h3 class="font-display font-semibold text-lg">${item.t}</h3>
+          ${item.s ? '<span class="text-[10px] px-2 py-1 rounded-full bg-white/10 text-white/70">Sample</span>' : ''}
+        </div>
+        <p class="text-sm text-white/70 mt-1 flex-1">${item.p}</p>
+        <div class="mt-4 flex items-center gap-2">
+          ${item.s ? '<button class="preview px-3 py-2 rounded-lg border border-white/15 bg-white/5 text-sm" data-title="'+item.t+'" data-body="'+body.replace(/\"/g,'\\"')+'">Preview</button>' : ''}
+          <a href="#pricing" class="px-3 py-2 rounded-lg border border-neon/70 bg-neon text-black font-semibold text-sm">Unlock</a>
+        </div>
+      </div>`;
+    }
+
+    let active = 'ads';
+    function render(){
+      const q = (search?.value||'').toLowerCase();
+      const items = (CURR[active]||[]).filter(i => i.t.toLowerCase().includes(q) || i.p.toLowerCase().includes(q));
+      grid.innerHTML = items.map(cardHTML).join('');
+      document.querySelectorAll('.preview').forEach(btn => btn.addEventListener('click', () => openLesson(btn.dataset.title, btn.dataset.body)));
+    }
+
+    tabs.forEach(b=>{
+      b.addEventListener('click', ()=>{
+        active = b.dataset.k; render();
+        tabs.forEach(x=>{
+          const on = x===b; x.classList.toggle('border-neon/60', on); x.classList.toggle('bg-white/10', on);
+        })
+      })
+    });
+
+    search?.addEventListener('input', render);
+    render(); // initial
+
+    // Lesson modal
+    const lessonModal = document.getElementById('lessonModal');
+    const lessonOverlay = document.getElementById('lessonOverlay');
+    const lessonClose = document.getElementById('lessonClose');
+    const lessonTitle = document.getElementById('lessonTitle');
+    const lessonBody = document.getElementById('lessonBody');
+
+    function openLesson(title, body){
+      lessonTitle.textContent = title;
+      lessonBody.textContent = body;
+      lessonModal.classList.remove('hidden');
+      lessonModal.classList.add('flex');
+    }
+    function closeLesson(){ lessonModal.classList.add('hidden'); lessonModal.classList.remove('flex'); }
+    lessonOverlay?.addEventListener('click', closeLesson);
+    lessonClose?.addEventListener('click', closeLesson);
 
     // ---------- Footer year ----------
     document.getElementById('year').textContent = new Date().getFullYear();
