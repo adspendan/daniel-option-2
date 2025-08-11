@@ -465,7 +465,7 @@
 
     // ---------- GLOBAL 30‑DAY CADENCE COUNTDOWN ----------
     function nextPriceIncrease(now = new Date()){
-      const ref = new Date(CONFIG.NEXT_PRICE_EPOCH);
+      const ref = (()=>{ try{ const n = String(CONFIG.NEXT_PRICE_EPOCH||'').replace(/[–—‑]/g,'-'); const d = new Date(n); return isNaN(d) ? new Date(Date.UTC(2025,7,1)) : d; } catch(e){ return new Date(Date.UTC(2025,7,1)); } })();
       const MS_30D = 30 * 24 * 60 * 60 * 1000;
       if (now <= ref) return ref;
       const diff = now.getTime() - ref.getTime();
@@ -507,9 +507,9 @@
         const d = Math.floor(left/86400000); left -= d*86400000;
         const h = Math.floor(left/3600000); left -= h*3600000;
         const m = Math.floor(left/60000);
-        document.getElementById('cdays').textContent = d;
-        document.getElementById('chours').textContent = h;
-        document.getElementById('cmins').textContent = m;
+        const dEl = document.getElementById('cdays'); if (dEl) dEl.textContent = d;
+        const hEl = document.getElementById('chours'); if (hEl) hEl.textContent = h;
+        const mEl = document.getElementById('cmins'); if (mEl) mEl.textContent = m;
       }
       tick(); setInterval(tick, 60000);
     })();
@@ -673,10 +673,31 @@ This is a short preview outline. Join to unlock the full lesson, templates, and 
     const lessonBody = document.getElementById('lessonBody');
 
     function openLesson(title, body){
-      lessonTitle.textContent = title;
-      lessonBody.textContent = body;
-      lessonModal.classList.remove('hidden');
-      lessonModal.classList.add('flex');
+      if (lessonTitle) lessonTitle.textContent = title || 'Preview';
+      if (lessonBody) lessonBody.textContent = body || '';
+      lessonModal?.classList.remove('hidden');
+      lessonModal?.classList.add('flex');
     }
-    function closeLesson(){ lessonModal.classList.add('hidden'); lessonModal.classList.remove('flex'); }
+    function closeLesson(){
+      lessonModal?.classList.add('hidden');
+      lessonModal?.classList.remove('flex');
+    }
     lessonOverlay?.addEventListener('click', closeLesson);
+    lessonClose?.addEventListener('click', closeLesson);
+
+    // Preview Agent button → open lesson modal with sample content
+    const previewAgentBtn = document.getElementById('previewAgent');
+    previewAgentBtn?.addEventListener('click', () => {
+      openLesson('AI Setter Voice Agent — Preview', `What you get:
+• Build prompts + .env template
+• MCP tool server config
+• Call flow + qualification rubric
+• CRM notes auto‑write pipeline
+• Pricing sheet + one‑pager`);
+    });
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
