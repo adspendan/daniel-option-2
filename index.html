@@ -308,7 +308,7 @@
     </div>
   </section>
 
-  <!-- PRICING / CHECKO
+  <!-- PRICING / CHECKOUT -->
   <section id="pricing" class="px-4 py-12">
     <div class="max-w-4xl mx-auto">
       <div class="rounded-2xl border border-neon/40 bg-black/30 p-6">
@@ -486,8 +486,10 @@
       const now = new Date();
       const next = nextPriceIncrease(now);
       const ms = next.getTime() - now.getTime();
-      document.getElementById('countdown').textContent = formatCountdown(ms);
-      document.getElementById('countdownInline').textContent = formatCountdown(ms);
+      const mainEl = document.getElementById('countdown');
+      const inlineEl = document.getElementById('countdownInline');
+      if (mainEl) mainEl.textContent = formatCountdown(ms);
+      if (inlineEl) inlineEl.textContent = formatCountdown(ms);
     }
     setInterval(tickCountdown, 1000); tickCountdown();
 
