@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Join the GRIT Network — Ads + AI Community | Adspend Agency × OperatorHQ</title>
-  <meta name="description" content="GRIT Network — Test fast. Scale faster. Print ROAS. 7‑day free trial, then $200/mo. Performance ads + private AI systems. Live calls, courses, templates." />
+  <meta name="description" content="GRIT Network — Test fast. Scale faster. Print ROAS. 7-day free trial, then $200/mo. Performance ads + private AI systems. Live calls, courses, templates." />
   <meta name="theme-color" content="#0F1115" />
 
   <!-- Fonts -->
@@ -42,6 +42,9 @@
     .blurred:before{content:"";position:absolute;inset:0;backdrop-filter:blur(6px);border-radius:1rem;background:rgba(0,0,0,.35)}
     .lock-badge{box-shadow:0 0 0 3px rgba(193,255,114,0.18)}
   </style>
+
+  <!-- Stripe Buy Button -->
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 </head>
 <body class="min-h-screen bg-field text-white antialiased">
   <!-- Sticky top CTA -->
@@ -52,7 +55,7 @@
       </div>
       <div class="flex items-center gap-2">
         <button id="openLogin" class="hidden sm:inline-flex items-center gap-2 rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-sm">Log in</button>
-        <a id="stickyCTA" href="#pricing" class="inline-flex items-center gap-2 rounded-lg border border-neon/70 bg-neon text-black font-semibold px-3 py-1.5 text-sm hover:shadow-glow">Start 7‑Day Trial</a>
+        <a id="stickyCTA" href="https://buy.stripe.com/4gM14n9c0dRB2149gN2wU00" class="inline-flex items-center gap-2 rounded-lg border border-neon/70 bg-neon text-black font-semibold px-3 py-1.5 text-sm hover:shadow-glow">Start 7-Day Trial</a>
       </div>
     </div>
   </header>
@@ -60,10 +63,10 @@
   <!-- HERO -->
   <section class="pt-28 sm:pt-32 pb-10 px-4">
     <div class="max-w-5xl mx-auto text-center">
-      <p class="text-xs tracking-[0.18em] text-white/60 uppercase">Members‑Only Network</p>
+      <p class="text-xs tracking-[0.18em] text-white/60 uppercase">Members-Only Network</p>
       <h1 class="font-display font-extrabold tracking-tight leading-tight mt-2 text-4xl sm:text-5xl md:text-6xl">Join the GRIT Network — <span class="whitespace-nowrap">Ads Mastery</span> + <span class="whitespace-nowrap">Private AI Systems</span></h1>
       <div class="mt-3 text-sm sm:text-base text-white/80" id="tagline"><span id="taglineRot" class="font-semibold text-white">Test fast. Scale faster.</span></div>
-      <p class="mt-5 text-base sm:text-lg text-white/75 max-w-3xl mx-auto">7‑day free trial to a curated slice of the portal. Then <span class="text-white font-semibold">$200/mo</span>. Price <span class="font-semibold text-neon">increases every 30 days</span> — lock it in now.</p>
+      <p class="mt-5 text-base sm:text-lg text-white/75 max-w-3xl mx-auto">7-day free trial to a curated slice of the portal. Then <span class="text-white font-semibold">$200/mo</span>. Price <span class="font-semibold text-neon">increases every 30 days</span> — lock it in now.</p>
 
       <!-- Countdown / Urgency -->
       <div class="mt-6 flex flex-col md:flex-row items-center justify-center gap-4">
@@ -71,19 +74,19 @@
           <div class="text-xs text-white/60">Next Price Bump In</div>
           <div id="countdown" class="font-display text-2xl md:text-3xl font-bold text-neon">—</div>
         </div>
-        <a href="#pricing" class="inline-flex items-center justify-center gap-2 rounded-xl border border-neon/70 bg-neon text-black font-semibold px-6 py-3 hover:shadow-glow">Start My Free Trial</a>
+        <a href="https://buy.stripe.com/4gM14n9c0dRB2149gN2wU00" class="inline-flex items-center justify-center gap-2 rounded-xl border border-neon/70 bg-neon text-black font-semibold px-6 py-3 hover:shadow-glow">Start My Free Trial</a>
       </div>
 
       <!-- Price-lock badge (user-specific 30d timer) -->
       <div class="mt-4 inline-flex items-center gap-2 rounded-full border border-neon/60 bg-black/40 px-3 py-1 text-xs text-white/80 lock-badge">
-        <span class="text-neon font-semibold">Your price‑lock</span> ends in <span id="cdays">—</span>d <span id="chours">—</span>h <span id="cmins">—</span>m
+        <span class="text-neon font-semibold">Your price-lock</span> ends in <span id="cdays">—</span>d <span id="chours">—</span>h <span id="cmins">—</span>m
       </div>
 
-      <p class="mt-4 text-xs text-white/50">For e‑commerce, services, and creators • Meta/TikTok/Google • Local/private AI operators</p>
+      <p class="mt-4 text-xs text-white/50">For e-commerce, services, and creators • Meta/TikTok/Google • Local/private AI operators</p>
     </div>
   </section>
 
-  <!-- WHAT YOU GET -->
+  <!-- WHAT YOU GET (refreshed) -->
   <section class="px-4 py-10">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-8">
@@ -97,16 +100,17 @@
             <li>Creative & angle testing frameworks</li>
             <li>Media buying playbooks (Meta/TikTok/YouTube)</li>
             <li>Offer architecture & landing page teardown bank</li>
+            <li><span class="text-white">Creator Cockpit</span>: pipeline + briefs + KPI tracker</li>
           </ul>
         </div>
         <div class="rounded-2xl border border-white/10 bg-soft/60 p-5">
           <h3 class="font-display font-bold text-xl">AI Systems</h3>
           <ul class="mt-3 text-sm text-white/80 space-y-2 list-disc list-inside">
-            <li>Build a private AI HQ (local or private cloud) — your data stays yours</li>
-            <li>Production‑ready RAG: retrieval design, evals, guardrails</li>
-            <li>Tool calling with Model Context Protocol (MCP) + external APIs</li>
-            <li>Multi‑agent orchestration & job runners (approvals, queues)</li>
-            <li>Supervised fine‑tuning & secure deployments</li>
+            <li>Build a private AI HQ (local or private cloud)</li>
+            <li>Production-ready RAG + evals + guardrails</li>
+            <li>Model Context Protocol (MCP) tool servers</li>
+            <li>Multi-agent orchestration & job runners</li>
+            <li>OperatorHQ <span class="text-white">HQ/HQ+</span> add-ons roadmap</li>
           </ul>
         </div>
         <div class="rounded-2xl border border-white/10 bg-soft/60 p-5">
@@ -115,6 +119,7 @@
             <li>Client onboarding, contracts, SOPs</li>
             <li>Sales scripts, commission plans, CRM setups</li>
             <li>Automation library & integration recipes</li>
+            <li>Design kit + <span class="text-white">Canva ad templates</span></li>
           </ul>
         </div>
         <div class="rounded-2xl border border-white/10 bg-soft/60 p-5">
@@ -122,26 +127,27 @@
           <ul class="mt-3 text-sm text-white/80 space-y-2 list-disc list-inside">
             <li>Monthly live calls + Q&A replays</li>
             <li>Deal room, teardown requests, hot seats</li>
-            <li>Members‑only chat (Discord/Skool) access</li>
+            <li>Members-only chat (Discord/Skool) access</li>
+            <li>Monthly <span class="text-white">AI Agent Drop</span> walkthrough</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TRACKS / CURRICULUM PREVIEW -->
+  <!-- TRACKS / CURRICULUM PREVIEW (unchanged structure, fresh content below in JS) -->
   <section id="curriculum" class="px-4 py-10">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-6">
         <h2 class="font-display font-extrabold text-3xl sm:text-4xl tracking-tight">Pick a Track — or Do Them All</h2>
-        <p class="text-white/70 mt-2">Clear paths with step‑by‑step lessons, templates, and live breakdowns.</p>
+        <p class="text-white/70 mt-2">Clear paths with step-by-step lessons, templates, and live breakdowns.</p>
       </div>
 
       <!-- Tabs -->
       <div class="flex flex-wrap items-center justify-center gap-2">
         <button class="tab px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-sm" data-k="ads">Ads Mastery</button>
         <button class="tab px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-sm" data-k="agency">Agency Builder</button>
-        <button class="tab px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-sm" data-k="ecom">E‑com & Offers</button>
+        <button class="tab px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-sm" data-k="ecom">E-com & Offers</button>
         <button class="tab px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-sm" data-k="ai">AI Systems</button>
         <button class="tab px-3 py-2 rounded-xl bg-white/5 border border-white/10 text-sm" data-k="automation">Automation Library</button>
       </div>
@@ -155,7 +161,7 @@
       <div id="grid" class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 
       <div class="mt-6 text-center">
-        <a href="#pricing" class="inline-flex items-center justify-center gap-2 rounded-xl border border-neon/70 bg-neon text-black font-semibold px-6 py-3">Unlock Full Library</a>
+        <a href="https://buy.stripe.com/4gM14n9c0dRB2149gN2wU00" class="inline-flex items-center justify-center gap-2 rounded-xl border border-neon/70 bg-neon text-black font-semibold px-6 py-3">Unlock Full Library</a>
       </div>
     </div>
   </section>
@@ -171,8 +177,8 @@
         <div class="rounded-2xl border border-white/10 bg-soft/60 p-6">
           <h3 class="font-display font-bold text-2xl mb-2">For Brands & Creators</h3>
           <ul class="text-sm text-white/80 space-y-2 list-disc list-inside">
-            <li>Direct‑response ad system (offers, hooks, creative testing)</li>
-            <li>AI‑assisted creative engine: auto‑generate hooks, angles, briefs from your public content (YouTube, IG, TikTok, X)</li>
+            <li>Direct-response ad system (offers, hooks, creative testing)</li>
+            <li>AI-assisted creative engine: auto-generate hooks, angles, briefs from your public content (YouTube, IG, TikTok, X)</li>
             <li>UGC brief generator + backlog builder inside Slack/Discord workflows</li>
             <li>ROAS dashboard + weekly AI debriefs and action cadence</li>
             <li>Email/SMS sequences drafted from product feed, reviews, and past posts</li>
@@ -181,11 +187,11 @@
         <div class="rounded-2xl border border-white/10 bg-soft/60 p-6">
           <h3 class="font-display font-bold text-2xl mb-2">For Agencies & Operators</h3>
           <ul class="text-sm text-white/80 space-y-2 list-disc list-inside">
-            <li>Niche‑aware onboarding kit auto‑generated per vertical (contracts, scopes, SOPs)</li>
-            <li>Sales pipeline & appointment‑setter scripts + deploy an AI setter that calls/qualifies leads</li>
-            <li>Build your first domain‑trained chatbot (RAG over client assets) for a target niche (medical, financial, home services)</li>
+            <li>Niche-aware onboarding kit auto-generated per vertical (contracts, scopes, SOPs)</li>
+            <li>Sales pipeline & appointment-setter scripts + deploy an AI setter that calls/qualifies leads</li>
+            <li>Build your first domain-trained chatbot (RAG over client assets) for a target niche (medical, financial, home services)</li>
             <li>Voice assistant for inbound calls: verify, route, and schedule with CRM sync</li>
-            <li>Package, price, and sell an automation (lead routing, reporting, or billing) end‑to‑end</li>
+            <li>Package, price, and sell an automation (lead routing, reporting, or billing) end-to-end</li>
           </ul>
         </div>
       </div>
@@ -200,7 +206,7 @@
           <h2 class="font-display font-extrabold text-3xl tracking-tight">Live Calls, Real Builds</h2>
           <p class="text-white/70 mt-2 text-sm max-w-xl">Two live calls per month: media buying breakdowns, AI fundamentals (LLMs, RAG, MCP, orchestration), and Q&A. Replays archived. Submit accounts or workflows for teardown.</p>
         </div>
-        <a href="#pricing" class="inline-flex items-center justify-center gap-2 rounded-xl border border-neon/70 bg-neon text-black font-semibold px-6 py-3 self-start md:self-auto">Start Free Trial</a>
+        <a href="https://buy.stripe.com/4gM14n9c0dRB2149gN2wU00" class="inline-flex items-center justify-center gap-2 rounded-xl border border-neon/70 bg-neon text-black font-semibold px-6 py-3 self-start md:self-auto">Start Free Trial</a>
       </div>
       <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
         <div class="rounded-xl border border-white/10 bg-black/20 p-4"><div class="text-white/80">Week 1</div><div class="text-neon font-bold">Ad Systems Deep Dive</div></div>
@@ -217,7 +223,7 @@
       <div class="rounded-2xl border border-white/10 bg-soft/60 p-6">
         <div class="flex items-center justify-between gap-4 flex-wrap">
           <h2 class="font-display font-bold text-2xl">Inside the Portal</h2>
-          <div class="text-xs text-white/60">7‑day trial unlocks: <span class="text-white">Intro course, 1 template pack, latest call replay</span></div>
+          <div class="text-xs text-white/60">7-day trial unlocks: <span class="text-white">Intro course, 1 template pack, latest call replay</span></div>
         </div>
         <div class="mt-5 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           <!-- Card 1 -->
@@ -252,19 +258,19 @@
           <div class="relative rounded-xl border border-white/10 bg-black/30 p-4 overflow-hidden">
             <div class="absolute inset-0 blurred pointer-events-none rounded-xl"></div>
             <div class="text-sm text-white/60 mb-1">Playbook</div>
-            <div class="font-semibold">Dropshipping to Brand: 30‑Day Sprint</div>
+            <div class="font-semibold">Dropshipping to Brand: 30-Day Sprint</div>
             <div class="mt-2 text-xs text-white/60">Product research • Offers • Creative engine</div>
           </div>
           <!-- Card 6 -->
           <div class="relative rounded-xl border border-white/10 bg-black/30 p-4 overflow-hidden">
             <div class="absolute inset-0 blurred pointer-events-none rounded-xl"></div>
             <div class="text-sm text-white/60 mb-1">Tech</div>
-            <div class="font-semibold">MCP Tool Servers & Multi‑Agent Orchestration — Zero to Live</div>
+            <div class="font-semibold">MCP Tool Servers & Multi-Agent Orchestration — Zero to Live</div>
             <div class="mt-2 text-xs text-white/60">Secure tool calling • Evaluations • Guardrails</div>
           </div>
         </div>
         <div class="mt-5 flex items-center justify-center">
-          <a href="#pricing" class="inline-flex items-center justify-center gap-2 rounded-xl border border-neon/70 bg-neon text-black font-semibold px-6 py-3 hover:shadow-glow">Unlock with Free Trial</a>
+          <a href="https://buy.stripe.com/4gM14n9c0dRB2149gN2wU00" class="inline-flex items-center justify-center gap-2 rounded-xl border border-neon/70 bg-neon text-black font-semibold px-6 py-3 hover:shadow-glow">Unlock with Free Trial</a>
         </div>
       </div>
     </div>
@@ -274,31 +280,31 @@
   <section id="agents" class="px-4 py-10">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-6">
-        <h2 class="font-display font-extrabold text-3xl sm:text-4xl tracking-tight">Ready‑to‑Sell AI Agents + $40k/mo Agency‑in‑a‑Box</h2>
-        <p class="text-white/70 mt-2">Copy the exact builds we use. White‑label and sell to your market.</p>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl tracking-tight">Ready-to-Sell AI Agents + $40k/mo Agency-in-a-Box</h2>
+        <p class="text-white/70 mt-2">Copy the exact builds we use. White-label and sell to your market.</p>
       </div>
       <div class="grid md:grid-cols-2 gap-6">
         <div class="rounded-2xl border border-white/10 bg-soft/60 p-6">
           <h3 class="font-display font-bold text-2xl mb-2">AI Agents (Monthly Drops)</h3>
           <ul class="text-sm text-white/80 space-y-2 list-disc list-inside">
-            <li>New agents every month (e.g., AI Setter Voice Agent, Domain‑trained Lead Bot, Reporting Analyst).</li>
-            <li>Step‑by‑step <span class="text-white">build prompts</span>, env setup, and deploy scripts.</li>
+            <li>New agents every month (e.g., AI Setter Voice Agent, Domain-trained Lead Bot, Reporting Analyst).</li>
+            <li>Step-by-step <span class="text-white">build prompts</span>, env setup, and deploy scripts.</li>
             <li>MCP tool servers, RAG seed datasets, eval suite & guardrails templates.</li>
-            <li>Sales one‑pagers + pricing sheet to sell as your own.</li>
-            <li><span class="text-white">White‑label license</span> for members (details inside each drop).</li>
+            <li>Sales one-pagers + pricing sheet to sell as your own.</li>
+            <li><span class="text-white">White-label license</span> for members (details inside each drop).</li>
           </ul>
           <div class="mt-4 flex items-center gap-3">
             <button id="previewAgent" class="px-4 py-2 rounded-lg border border-white/15 bg-white/5 text-sm">Preview an Agent</button>
-            <a href="#pricing" class="px-4 py-2 rounded-lg border border-neon/70 bg-neon text-black font-semibold text-sm">Start Free Trial</a>
+            <a href="https://buy.stripe.com/4gM14n9c0dRB2149gN2wU00" class="px-4 py-2 rounded-lg border border-neon/70 bg-neon text-black font-semibold text-sm">Start Free Trial</a>
           </div>
         </div>
         <div class="rounded-2xl border border-white/10 bg-soft/60 p-6">
-          <h3 class="font-display font-bold text-2xl mb-2">$40k/mo AI Agency‑in‑a‑Box</h3>
+          <h3 class="font-display font-bold text-2xl mb-2">$40k/mo AI Agency-in-a-Box</h3>
           <ul class="text-sm text-white/80 space-y-2 list-disc list-inside">
-            <li>All decks & collateral: <span class="text-white">PowerPoints, one‑pagers, business cards</span>.</li>
+            <li>All decks & collateral: <span class="text-white">PowerPoints, one-pagers, business cards</span>.</li>
             <li><span class="text-white">Cold DM & cold email templates</span> that booked pipeline.</li>
             <li>Content strategy we used to reach <span class="text-white">200,000 followers</span>.</li>
-            <li>Our <span class="text-white">top‑performing ads</span> with <span class="text-white">Canva links</span> — duplicate, swap logo/text, launch.</li>
+            <li>Our <span class="text-white">top-performing ads</span> with <span class="text-white">Canva links</span> — duplicate, swap logo/text, launch.</li>
             <li>Ops & onboarding: proposals, MSA, SOW, Notion/CRM pipelines.</li>
           </ul>
           <p class="text-xs text-white/50 mt-3">Note: You’re responsible for compliance with platform policies and local laws when reselling or deploying agents.</p>
@@ -321,7 +327,7 @@
           </div>
           <div class="text-center md:text-right">
             <div class="text-4xl font-display font-extrabold text-neon leading-none">$200<span class="text-white/60 text-base font-sans">/mo</span></div>
-            <div class="text-xs text-white/60 mt-1">7‑day free trial • no risk</div>
+            <div class="text-xs text-white/60 mt-1">7-day free trial • no risk</div>
           </div>
         </div>
 
@@ -333,16 +339,29 @@
             <li>Members chat + monthly live calls</li>
             <li>Priority invites to OperatorHQ drops</li>
           </ul>
+
           <div class="rounded-xl border border-white/10 bg-soft/60 p-5">
+            <!-- Optional lead fields (non-blocking) -->
             <label class="block text-sm">Email
               <input id="email" type="email" placeholder="you@company.com" class="mt-1 w-full rounded-lg bg-black/30 border border-white/10 px-3 py-2" />
             </label>
             <label class="block text-sm mt-3">Name
               <input id="name" type="text" placeholder="Your Name" class="mt-1 w-full rounded-lg bg-black/30 border border-white/10 px-3 py-2" />
             </label>
-            <button id="checkoutBtn" class="mt-4 w-full inline-flex items-center justify-center gap-2 rounded-xl border border-neon/70 bg-neon text-black font-semibold px-4 py-3 hover:shadow-glow">Start 7‑Day Free Trial</button>
+
+            <!-- Primary: Stripe Buy Button -->
+            <div class="mt-4">
+              <stripe-buy-button
+                buy-button-id="buy_btn_1S4eGQGtHmUMvbJcCp3a1l34"
+                publishable-key="pk_live_51RupGRGtHmUMvbJcZEHSec7isGRhEoXzINdSbmMRY91Y11nipyYmdZpvoHd98fFlHZ1whBfO2Zau6kfVJTUO55cj007qqASSiS">
+              </stripe-buy-button>
+            </div>
+
+            <!-- Fallback CTA (same Stripe link) -->
+            <a id="checkoutBtn" href="https://buy.stripe.com/4gM14n9c0dRB2149gN2wU00" class="mt-3 w-full inline-flex items-center justify-center gap-2 rounded-xl border border-neon/70 bg-neon text-black font-semibold px-4 py-3 hover:shadow-glow">Start 7-Day Free Trial</a>
+
             <div class="text-[11px] text-white/50 mt-2 text-center">By starting a trial you agree to the <a href="#" class="underline">Terms</a>. You’ll be charged $200/mo after 7 days unless you cancel.</div>
-            <div class="text-xs text-white/60 mt-3 text-center">Prefer PayPal? <a id="paypalLink" href="#" class="underline">Start with PayPal</a></div>
+            <div class="text-xs text-white/60 mt-3 text-center hidden" id="paypalRow">Prefer PayPal? <a id="paypalLink" href="#" class="underline">Start with PayPal</a></div>
           </div>
         </div>
       </div>
@@ -362,7 +381,7 @@
           <div class="text-xs text-white/60">ROAS in 14 days — creator brand</div>
         </div>
         <div class="rounded-xl border border-white/10 bg-black/30 p-4">
-          <div class="text-2xl font-bold text-neon">‑38%</div>
+          <div class="text-2xl font-bold text-neon">-38%</div>
           <div class="text-xs text-white/60">CPA cut in 21 days — local services</div>
         </div>
         <div class="rounded-xl border border-white/10 bg-black/30 p-4">
@@ -379,12 +398,12 @@
       <div class="rounded-2xl border border-white/10 bg-soft/60 p-6">
         <h2 class="font-display font-bold text-2xl">Network FAQ</h2>
         <details class="mt-4 border-t border-white/10 py-3">
-          <summary class="cursor-pointer font-semibold">What exactly unlocks during the 7‑day trial?</summary>
-          <p class="text-white/70 mt-2 text-sm">A guided path: Ads 101 mini‑course, one template pack, and the latest call replay. You’ll see the full portal map, but most items remain gated until you activate the subscription.</p>
+          <summary class="cursor-pointer font-semibold">What exactly unlocks during the 7-day trial?</summary>
+          <p class="text-white/70 mt-2 text-sm">A guided path: Ads 101 mini-course, one template pack, and the latest call replay. You’ll see the full portal map, but most items remain gated until you activate the subscription.</p>
         </details>
         <details class="border-t border-white/10 py-3">
           <summary class="cursor-pointer font-semibold">How does pricing work if it increases every 30 days?</summary>
-          <p class="text-white/70 mt-2 text-sm">Your price is locked for as long as you remain subscribed. The public price increases on a 30‑day cadence. If you cancel and rejoin later, you’ll rejoin at the current public price.</p>
+          <p class="text-white/70 mt-2 text-sm">Your price is locked for as long as you remain subscribed. The public price increases on a 30-day cadence. If you cancel and rejoin later, you’ll rejoin at the current public price.</p>
         </details>
         <details class="border-t border-white/10 py-3">
           <summary class="cursor-pointer font-semibold">Can I cancel during the trial?</summary>
@@ -396,7 +415,7 @@
         </details>
         <details class="border-t border-white/10 py-3">
           <summary class="cursor-pointer font-semibold">Do I need to be technical for the AI modules?</summary>
-          <p class="text-white/70 mt-2 text-sm">No. We provide step‑by‑step builds and copy‑paste configs. Advanced tracks dive into MCP servers, agents, and fine‑tuning when you’re ready.</p>
+          <p class="text-white/70 mt-2 text-sm">No. We provide step-by-step builds and copy-paste configs. Advanced tracks dive into MCP servers, agents, and fine-tuning when you’re ready.</p>
         </details>
       </div>
     </div>
@@ -408,7 +427,7 @@
       <h2 class="font-display font-extrabold text-3xl tracking-tight">This is where scale becomes normal</h2>
       <p class="text-white/70 mt-2 max-w-2xl mx-auto">Lock the $200/mo. Trial it for 7 days. If it doesn’t pay for itself, cancel in one click.</p>
       <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a href="#pricing" class="inline-flex items-center justify-center gap-2 rounded-xl border border-neon/70 bg-neon text-black font-semibold px-6 py-3 hover:shadow-glow">Start Free Trial</a>
+        <a href="https://buy.stripe.com/4gM14n9c0dRB2149gN2wU00" class="inline-flex items-center justify-center gap-2 rounded-xl border border-neon/70 bg-neon text-black font-semibold px-6 py-3 hover:shadow-glow">Start Free Trial</a>
         <button id="openLogin2" class="inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3">Log in</button>
       </div>
       <p class="text-xs text-white/50 mt-4">Questions? <a href="mailto:daniel@adspend.agency" class="underline">daniel@adspend.agency</a></p>
@@ -435,7 +454,7 @@
         <input id="loginEmail" type="email" placeholder="you@company.com" class="mt-1 w-full rounded-lg bg-black/30 border border-white/10 px-3 py-2" />
       </label>
       <button id="sendLink" class="mt-4 w-full inline-flex items-center justify-center gap-2 rounded-xl border border-neon/70 bg-neon text-black font-semibold px-4 py-3 hover:shadow-glow">Send Magic Link</button>
-      <div id="authNote" class="hidden text-xs text-white/70 mt-3 text-center">Check your email — we just sent a sign‑in link.</div>
+      <div id="authNote" class="hidden text-xs text-white/70 mt-3 text-center">Check your email — we just sent a sign-in link.</div>
     </div>
   </div>
 
@@ -449,23 +468,23 @@
       </div>
       <div id="lessonBody" class="mt-3 text-sm text-white/80 leading-relaxed"></div>
       <div class="mt-5 text-right">
-        <a href="#pricing" class="inline-flex items-center justify-center gap-2 rounded-xl border border-neon/70 bg-neon text-black font-semibold px-5 py-2">Unlock Full Lesson</a>
+        <a href="https://buy.stripe.com/4gM14n9c0dRB2149gN2wU00" class="inline-flex items-center justify-center gap-2 rounded-xl border border-neon/70 bg-neon text-black font-semibold px-5 py-2">Unlock Full Lesson</a>
       </div>
     </div>
   </div>
 
   <script>
-    // ---------- CONFIG (replace these when you hand me URLs / keys) ----------
+    // ---------- CONFIG ----------
     const CONFIG = {
-      STRIPE_CHECKOUT_URL: 'https://checkout.stripe.com/c/pay/cs_test_replace_me', // ← replace
-      PAYPAL_CHECKOUT_URL: 'https://www.paypal.com/checkoutnow?token=replace_me', // ← replace
-      CUSTOMER_PORTAL_URL: 'https://billing.stripe.com/p/login/test_replace_me',   // ← optional
-      NEXT_PRICE_EPOCH: '2025-08-01T00:00:00Z' // reference date to compute 30‑day bumps
+      STRIPE_CHECKOUT_URL: 'https://buy.stripe.com/4gM14n9c0dRB2149gN2wU00',
+      PAYPAL_CHECKOUT_URL: '', // add a URL to enable PayPal row
+      CUSTOMER_PORTAL_URL: '', // optional
+      NEXT_PRICE_EPOCH: '2025-08-01T00:00:00Z' // reference date to compute 30-day bumps
     };
 
-    // ---------- GLOBAL 30‑DAY CADENCE COUNTDOWN ----------
+    // ---------- GLOBAL 30-DAY CADENCE COUNTDOWN ----------
     function nextPriceIncrease(now = new Date()){
-      const ref = (()=>{ try{ const n = String(CONFIG.NEXT_PRICE_EPOCH||'').replace(/[–—‑]/g,'-'); const d = new Date(n); return isNaN(d) ? new Date(Date.UTC(2025,7,1)) : d; } catch(e){ return new Date(Date.UTC(2025,7,1)); } })();
+      const ref = (()=>{ try{ const n = String(CONFIG.NEXT_PRICE_EPOCH||'').replace(/[–—-]/g,'-'); const d = new Date(n); return isNaN(d) ? new Date(Date.UTC(2025,7,1)) : d; } catch(e){ return new Date(Date.UTC(2025,7,1)); } })();
       const MS_30D = 30 * 24 * 60 * 60 * 1000;
       if (now <= ref) return ref;
       const diff = now.getTime() - ref.getTime();
@@ -514,42 +533,24 @@
       tick(); setInterval(tick, 60000);
     })();
 
-    // ---------- CHECKOUT (client‑side redirect placeholders) ----------
+    // ---------- CHECKOUT FALLBACK (anchor already points to Stripe) ----------
     const email = document.getElementById('email');
     const nameEl = document.getElementById('name');
-    const checkoutBtn = document.getElementById('checkoutBtn');
+    const paypalRow = document.getElementById('paypalRow');
     const paypalLink = document.getElementById('paypalLink');
 
-    function withQuery(url, params){
-      const u = new URL(url);
-      Object.entries(params).forEach(([k,v])=>{ if(v) u.searchParams.set(k,v) });
-      return u.toString();
+    // Hide PayPal row unless configured
+    if (!CONFIG.PAYPAL_CHECKOUT_URL) {
+      paypalRow?.classList.add('hidden');
+    } else {
+      paypalRow?.classList.remove('hidden');
+      paypalLink?.setAttribute('href', CONFIG.PAYPAL_CHECKOUT_URL);
     }
 
-    checkoutBtn?.addEventListener('click', ()=>{
-      const e = (email.value||'').trim();
-      const n = (nameEl.value||'').trim();
-      if(!e || !e.includes('@')){ email.focus(); email.classList.add('shadow-glow'); setTimeout(()=>email.classList.remove('shadow-glow'), 1200); return; }
-      const dest = withQuery(CONFIG.STRIPE_CHECKOUT_URL, { client_reference_id: e, prefill_email: e, name: n, trial: '7d' });
-      // Mark intent locally so we can show onboarding on return
-      localStorage.setItem('join.intent', JSON.stringify({ email: e, ts: Date.now() }));
-      window.location.href = dest;
-    });
-
-    paypalLink?.addEventListener('click', (e)=>{
-      e.preventDefault();
-      const mail = (email.value||'').trim();
-      const dest = withQuery(CONFIG.PAYPAL_CHECKOUT_URL, { email: mail, trial: '7d' });
-      localStorage.setItem('join.intent', JSON.stringify({ email: mail, ts: Date.now() }));
-      window.location.href = dest;
-    });
-
-    // ---------- RETURN‑FLOW UX ----------
-    // If the payment provider redirects back like join.domain.com/?status=active
+    // ---------- RETURN-FLOW UX ----------
     const url = new URL(location.href);
     const status = url.searchParams.get('status');
     if(status === 'active' || status === 'trial'){
-      // very light client‑side gating flag (replace with real auth later)
       localStorage.setItem('join.member', status);
     }
 
@@ -572,19 +573,18 @@
     sendLink?.addEventListener('click', ()=>{
       const e = (loginEmail.value||'').trim();
       if(!e || !e.includes('@')){ loginEmail.focus(); return; }
-      // placeholder — integrate your auth API here
       authNote.classList.remove('hidden');
       setTimeout(hideAuth, 1800);
     });
 
-    // ---------- CURRICULUM DATA & RENDER ----------
+    // ---------- CURRICULUM DATA & RENDER (refreshed items) ----------
     const CURR = {
       ads: [
-        {t:'Direct‑Response Foundations', p:'Frameworks that print: offers, hooks, angles, messaging.', s:true},
+        {t:'Direct-Response Foundations', p:'Frameworks that print: offers, hooks, angles, messaging.', s:true},
         {t:'Creative Testing → Scale', p:'Structured test matrix, budgets, and iteration cadence.'},
         {t:'Media Buying OS', p:'Meta, TikTok, YouTube/Google — setups that actually work.'},
         {t:'Account Maintenance & Recovery', p:'When to cut, when to double, and how to save a sinking account.'},
-        {t:'Ad Strategy Templates', p:'Plug‑and‑play briefs, naming, and reporting formats.'}
+        {t:'Creator Cockpit', p:'Weekly content KPIs, UGC briefs, and ad-ready assembly line.'}
       ],
       agency: [
         {t:'Start & Grow Your Ad Agency', p:'Positioning, offers, pricing, retainers vs. performance.'},
@@ -595,23 +595,22 @@
       ],
       ecom: [
         {t:'Finding Winning Products', p:'Signals, tooling, and fast validation.'},
-        {t:'Offer Architecture for E‑com', p:'Bundles, AOV boosters, LTV plays.'},
-        {t:'Email & SMS Flows', p:'Welcome, Abandoned, Post‑purchase — with examples.'},
+        {t:'Offer Architecture for E-com', p:'Bundles, AOV boosters, LTV plays.'},
+        {t:'Email & SMS Flows', p:'Welcome, Abandoned, Post-purchase — with examples.'},
         {t:'Payment Gateways + Crypto', p:'What to use, how to set up, risk management.'},
         {t:'Store CRO Checklist', p:'Speed, trust, PDP anatomy, and quick wins.'}
       ],
       ai: [
         {t:'Start with AI (Vibecoding)', p:'Mindset, scaffolding, and getting your first wins.'},
-        {t:'Multi‑Agent Orchestration (Agentic)', p:'Design roles, tools, and reliable hand‑offs.'},
+        {t:'Multi-Agent Orchestration (Agentic)', p:'Design roles, tools, and reliable hand-offs.'},
         {t:'RAG That Doesn’t Break', p:'Chunking, retrieval, evals, and guardrails.'},
         {t:'MCP Servers & Tools', p:'Call external tools safely, design resilient flows.'},
-        {t:'Supervised Fine‑Tuning', p:'Datasets, runs, evals — when to do it and how.'},
         {t:'Deploy a Private AI HQ', p:'Local LLMs, secure env, your business HQ.'}
       ],
       automation: [
-        {t:'Automation Library & Job Runners', p:'Ready‑to‑use modules: reporting, audits, alerts.'},
-        {t:'Service Workflows', p:'Lead routing, booking, reminders, and follow‑ups.'},
-        {t:'E‑com Workflows', p:'Inventory, creative, UGC, and promo coordination.'},
+        {t:'Automation Library & Job Runners', p:'Ready-to-use modules: reporting, audits, alerts.'},
+        {t:'Service Workflows', p:'Lead routing, booking, reminders, and follow-ups.'},
+        {t:'E-com Workflows', p:'Inventory, creative, UGC, and promo coordination.'},
         {t:'Compliance & Logging', p:'Audit trails, access controls, and safe rollbacks.'}
       ]
     };
@@ -632,7 +631,7 @@ This is a short preview outline. Join to unlock the full lesson, templates, and 
         <p class="text-sm text-white/70 mt-1 flex-1">${item.p}</p>
         <div class="mt-4 flex items-center gap-2">
           ${item.s ? '<button class="preview px-3 py-2 rounded-lg border border-white/15 bg-white/5 text-sm" data-title="'+item.t+'" data-body="'+body.replace(/\"/g,'\\"')+'">Preview</button>' : ''}
-          <a href="#pricing" class="px-3 py-2 rounded-lg border border-neon/70 bg-neon text-black font-semibold text-sm">Unlock</a>
+          <a href="https://buy.stripe.com/4gM14n9c0dRB2149gN2wU00" class="px-3 py-2 rounded-lg border border-neon/70 bg-neon text-black font-semibold text-sm">Unlock</a>
         </div>
       </div>`;
     }
@@ -692,8 +691,8 @@ This is a short preview outline. Join to unlock the full lesson, templates, and 
 • Build prompts + .env template
 • MCP tool server config
 • Call flow + qualification rubric
-• CRM notes auto‑write pipeline
-• Pricing sheet + one‑pager`);
+• CRM notes auto-write pipeline
+• Pricing sheet + one-pager`);
     });
 
     // Footer year
